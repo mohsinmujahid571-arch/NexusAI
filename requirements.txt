@@ -1,0 +1,18 @@
+# NEXUS requirements
+# Install with:  python -m pip install -r requirements.txt
+
+# --- Required: the app won't start without this ---
+aiohttp>=3.9              # runs the local web GUI
+
+# --- Voice + AI (without this, the GUI opens in preview mode only) ---
+google-genai>=1.0         # Gemini Live voice
+
+# --- Features (each one only affects its own tool if missing) ---
+psutil>=5.9               # live CPU / RAM / network stats
+ddgs>=9.0                 # web search
+pyautogui>=0.9.54         # keyboard, typing and app control
+pyperclip>=1.8            # typing non-English / special characters
+send2trash>=1.8           # safely move files to the Recycle Bin
+
+# --- Windows only: set exact volume levels (skipped automatically on Mac/Linux) ---
+pycaw; sys_platform == "win32"
